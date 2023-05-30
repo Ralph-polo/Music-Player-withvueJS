@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+    integrity="sha512-ZnR2wlLbSbr8/c9AgLg3jQPAattCUImNsae6NHYnS9KrIwRdcY9DxFotXhNAKIKbAXlRnujIqUWoXXwqyFOeIQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body>
+<div id="app">
+    <div class="hero">
+        <div class="navbar">   
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>         
+            </ul>
+        </div> 
+        <div class="content">
+            <div class="left">
+                <h1>THE <br> REAL <br> MUSIC</h1>
+            </div>
+<div class="right">
+  <p>Click To Play</p>
+  <br>
+  <div class="play-icon-wrapper">
+    <button class="Play-icon" @click="togglePlayback">
+      <i :class="isPlaying ? 'bi bi-pause' : 'bi bi-play'"></i>
+    </button>
+  </div>
+  <div class="song-title-wrapper">
+    
+    <span class="song-title" style="color: white;">{{ songTitle }}</span>
+  </div>
+</div>
+        </div>
+    </div>
+    <audio ref="audioPlayer" :src="songSource"></audio>
+    
+    </audio>
+</div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="script.js"></script>
+</body>
+</html>
